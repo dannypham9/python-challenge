@@ -2,6 +2,7 @@
 import csv
 import os
 
+output=['totalmonths', 'totalprofloss', 'monthly_average', 'bestmonth', 'worstmonth']
 
 #create path for file
 csvpath= os.path.join("Resources", "budget_data.csv")
@@ -26,7 +27,8 @@ with open(csvpath) as csvfile:
 		profit_loss.append(int(row[1]))
 	
 	#count the amount of months
-	print(len(dates))
+	totalmonths=len(dates)
+	print(totalmonths)
 
 	#sum of the profit/loss for the period
 	totalprofloss= sum(profit_loss)
@@ -56,5 +58,17 @@ with open(csvpath) as csvfile:
 	worstmonth= dates[j+1]
 	print(worstmonth)
 
-output=[]
+#find file to write to for analysis
+output_path= os.path.join("Analysis", "analysis.txt")
 
+#open file
+with open(output_path, 'w', newline='') as textfile:
+	csvwriter= csv.writer(textfile)
+	csvwriter.writerow(['Finacial Analysis'])
+	csvwriter.writerow(['-----------------'])
+
+	csvwriter.writerow(['Total months:' + str(totalmonths)])
+	csvwriter.writerow([f'Total: ${totalprofloss}'])
+	csvwriter.writerow([f'Average Change: {monthly_average}'])
+	csvwriter.writerow([f'Greatest Increase in Profits: ${bestmonth}'])
+	csvwriter.writerow([f'Greatest Decrease in Profits: ${worstmonth}'])
