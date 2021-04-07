@@ -4,4 +4,8 @@ Total months:86
 Total: $38382578
 Average Change: -2315.12
 Greatest Increase in Profits: $Feb-2012
+<<<<<<< HEAD
 Greatest Decrease in Profits: $Sep-2013
+=======
+Greatest Decrease in Profits: $Sep-2013
+>>>>>>> c9477510a2199803e202d01b21703f4d106d1e59
