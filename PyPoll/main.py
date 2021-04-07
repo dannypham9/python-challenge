@@ -2,6 +2,8 @@ import os
 import csv
 
 votes=[]
+candidates= []
+
 
 csvpath= os.path.join("resources", "PyPoll_Resources_election_data.csv")
 
@@ -11,5 +13,7 @@ with open(csvpath) as csvfile:
 
 	for i in csvreader:
 		votes.append(i)
-	print(len(votes))
+		candidates.append(i[2])
+		totalvotes= len(votes)
+	print(totalvotes)
 		
