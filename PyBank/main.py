@@ -69,6 +69,6 @@ with open(output_path, 'w', newline='') as textfile:
 
 	csvwriter.writerow(['Total months:' + str(totalmonths)])
 	csvwriter.writerow([f'Total: ${totalprofloss}'])
-	csvwriter.writerow([f'Average Change: {monthly_average}'])
-	csvwriter.writerow([f'Greatest Increase in Profits: ${bestmonth}'])
-	csvwriter.writerow([f'Greatest Decrease in Profits: ${worstmonth}'])
+	csvwriter.writerow([f'Average Change: ${monthly_average}'])
+	csvwriter.writerow([f'Greatest Increase in Profits: {bestmonth} (${greatest_increase})'])
+	csvwriter.writerow([f'Greatest Decrease in Profits: {worstmonth} (${greatest_decrease})'])
